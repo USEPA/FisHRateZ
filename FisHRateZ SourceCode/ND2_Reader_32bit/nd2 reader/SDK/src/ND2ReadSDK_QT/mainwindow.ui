@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>758</width>
+    <height>820</height>
+   </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/images/nd2.tiff</normaloff>:/images/nd2.tiff</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="2,0,0,1">
+    <item>
+     <widget class="CustomGraphicsView" name="graphicsView">
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="dragMode">
+       <enum>QGraphicsView::ScrollHandDrag</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Image Sequence:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Original Position:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="position">
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Stage Position:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="stageposition">
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QSlider" name="imageSequence">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="tracking">
+       <bool>false</bool>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="tickPosition">
+       <enum>QSlider::TicksAbove</enum>
+      </property>
+      <property name="tickInterval">
+       <number>1</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>Image Metadata</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QTableWidget" name="localmetadata">
+          <property name="verticalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <property name="horizontalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <row>
+           <property name="text">
+            <string>Width</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Height</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Sequence Count</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Time</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>X</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Y</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Z</string>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>Value</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Global Metadata</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QTableWidget" name="metadata">
+          <property name="verticalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <property name="horizontalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <row>
+           <property name="text">
+            <string>Time</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Angle</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Calibration</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Aspect</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>ObjectiveName</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>ObjectiveMag</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>ObjectiveNA</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>RefractionIndex1</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>RefractionIndex2</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>PinholeRadius</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Zoom</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>ProjectiveMag</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>ImageType</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>PlaneCount</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>ComponentCount</string>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>Value</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_6">
+       <attribute name="title">
+        <string>Experiment</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QTableWidget" name="experiment">
+          <property name="verticalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>Type</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Size</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Interval</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Home</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Text Info</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QTableWidget" name="textInfo">
+          <property name="verticalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <property name="horizontalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <row>
+           <property name="text">
+            <string>Author</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Capturing</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Conclusion</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Date</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Description</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Group</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>ImageID</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Info1</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Info2</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Location</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Optics</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>SampleID</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Sampling</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Type</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Application</string>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>Value</string>
+           </property>
+          </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>Events</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_51">
+        <item>
+         <widget class="QTableWidget" name="events">
+          <property name="verticalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <property name="horizontalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Type</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Description</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Recorded Data</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QTableWidget" name="recordedData">
+          <property name="verticalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <property name="horizontalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_7">
+       <attribute name="title">
+        <string>Custom Metadata</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QTableWidget" name="custommetadata">
+          <property name="verticalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <property name="horizontalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_8">
+       <attribute name="title">
+        <string>Alignment</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_52">
+        <item>
+         <widget class="QTableWidget" name="alignment">
+          <property name="verticalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <property name="horizontalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>Point #</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Sequence Index</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>X Image [px]</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Y Image [px]</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>X Original [um]</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Y Original [um]</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>X Stage [um]</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Y Stage [um]</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>758</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen_File"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOpen_File"/>
+   <addaction name="actionShow_Binary"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionOpen_File">
+   <property name="text">
+    <string>Open File</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionShow_Binary">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Binary</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CustomGraphicsView</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">QGraphicsView</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

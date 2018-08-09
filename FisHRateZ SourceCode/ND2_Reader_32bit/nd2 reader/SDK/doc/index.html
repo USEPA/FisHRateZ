@@ -1,0 +1,1517 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>ND2 Software Development Kit</title>
+      <link rel="stylesheet" type="text/css" href="style_common.css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div lang="en" class="book" title="ND2 Software Development Kit">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="d0e1"></a>ND2 Software Development Kit
+                  </h1>
+               </div>
+               <div>
+                  <h2 class="subtitle">for <span>Windows</span>  
+                        
+                  </h2>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="toc">
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="chapter"><a href="#release.notes">1. Release Notes to ND2 SDK</a></span></dt>
+               <dt><span class="chapter"><a href="#indexing">2. Frame Indexing</a></span></dt>
+               <dt><span class="chapter"><a href="#nd2.experiment">3. ND2 Experiment</a></span></dt>
+               <dt><span class="chapter"><a href="#picture.planes">4. Component, Channel, Picture plane</a></span></dt>
+               <dt><span class="chapter"><a href="#custom.data">5. About ND2 Files</a></span></dt>
+               <dt><span class="chapter"><a href="#constants">6. Constants</a></span></dt>
+               <dt><span class="chapter"><a href="#d0e535">7. Structures</a></span></dt>
+               <dt><span class="chapter"><a href="#d0e818">8. Functions</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="section"><a href="#Lim_DestroyPicture">8.1. Lim_DestroyPicture</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_FileClose">8.2. Lim_FileClose</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_FileGetAttributes">8.3. Lim_FileGetAttributes</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_FileGetBinary">8.4. Lim_FileGetBinary</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_FileGetBinaryDescriptors">8.5. Lim_FileGetBinaryDescriptors</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_FileGetExperiment">8.6. Lim_FileGetExperiment</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_FileGetImageData">8.7. Lim_FileGetImageData</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_FileGetImageRectData">8.8. Lim_FileGetImageRectData</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_FileGetMetadata">8.9. Lim_FileGetMetadata</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_FileGetTextinfo">8.10. Lim_FileGetTextinfo</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_FileOpenForRead">8.11. Lim_FileOpenForRead</a></span></dt>
+                     <dt><span class="section"><a href="#FR_Lim_GetAlignmentPoints">8.12. Lim_GetAlignmentPoints</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_GetCoordsFromSeqIndex">8.13. Lim_GetCoordsFromSeqIndex</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_GetCustomDataCount">8.14. Lim_GetCustomDataCount</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_GetCustomDataDouble">8.15. Lim_GetCustomDataDouble</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_GetCustomDataInfo">8.16. Lim_GetCustomDataInfo</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_GetCustomDataString">8.17. Lim_GetCustomDataString</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_GetLargeImageDimensions">8.18. Lim_GetLargeImageDimensions</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_GetMultipointName">8.19. Lim_GetMultipointName</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_GetNextUserEvent">8.20. Lim_GetNextUserEvent</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_GetRecordedDataDouble">8.21. Lim_GetRecordedDataDouble</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_GetRecordedDataInt">8.22. Lim_GetRecordedDataInt</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_GetRecordedDataString">8.23. Lim_GetRecordedDataString</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_GetSeqIndexFromCoords">8.24. Lim_GetSeqIndexFromCoords</a></span></dt>
+                     <dt><span class="section"><a href="#FR_Lim_GetStageCoordinates">8.25. Lim_GetStageCoordinates</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_GetZStackHome">8.26. Lim_GetZStackHome</a></span></dt>
+                     <dt><span class="section"><a href="#Lim_InitPicture">8.27. Lim_InitPicture</a></span></dt>
+                     <dt><span class="section"><a href="#FR_Lim_SetStageAlignment">8.28. Lim_SetStageAlignment</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="chapter"><a href="#d0e1652">9. Using ND2SDK with Cocoa applications</a></span></dt>
+            </dl>
+         </div>
+         <div class="chapter" title="&nbsp;1.&nbsp;Release Notes to ND2 SDK">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title"><a name="release.notes"></a>&nbsp;1.&nbsp;Release Notes to ND2 SDK
+                     </h2>
+                  </div>
+                  <div>
+                     <p class="releaseinfo">v. 9.00</p>
+                  </div>
+                  <div>
+                     <div class="revhistory">
+                        <table border="1" width="100%" summary="Revision history">
+                           <tr>
+                              <th align="left" valign="top" colspan="2"><b>Revision History</b></th>
+                           </tr>
+                           <tr>
+                              <td align="left">Revision 9.00</td>
+                              <td align="left">22. 7. 2015</td>
+                           </tr>
+                           <tr>
+                              <td align="left" colspan="2">
+                                                   
+                                                   
+                                 <div class="itemizedlist">
+                                    <ul class="itemizedlist" type="disc">
+                                       <li class="listitem">
+                                          <p>New feature: Support for reading stage coordinates has been added:</p>
+                                          <p>
+                                                                        <code class="function">Lim_GetStageCoordinates</code> - returns an array of stage coordinates of the specified image pixels. Stage coordinates are computed either from stage settings
+                                             stored to the file during acquisition or user defined mapping from an external system.
+                                          </p>
+                                       </li>
+                                       <li class="listitem">
+                                          <p>New feature: Support for reading Custom Metadata (generated by JOBS or by ND Acquisition or input in Image Properties) has
+                                             been added.
+                                          </p>
+                                          <div class="itemizedlist">
+                                             <ul class="itemizedlist" type="circle">
+                                                <li class="listitem">
+                                                   <p>
+                                                                                          <code class="function">Lim_GetCustomDataCount</code> - The function returns the number of Custom Metadata fields defined in a file specified by hFile parameter.
+                                                   </p>
+                                                </li>
+                                                <li class="listitem">
+                                                   <p>
+                                                                                          <code class="function">Lim_GetCustomDataDouble</code> - The function returns numerical representation of the Custom Metadata field value.
+                                                   </p>
+                                                </li>
+                                                <li class="listitem">
+                                                   <p>
+                                                                                          <code class="function">Lim_GetCustomDataInfo</code> - The function returns information about the Custom Data field at index uiCustomDataIndex.
+                                                   </p>
+                                                </li>
+                                                <li class="listitem">
+                                                   <p>
+                                                                                          <code class="function">Lim_GetCustomDataString</code> - The function returns text representation of the Custom Metadata field value.
+                                                   </p>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                          <p>
+                                                                     
+                                          </p>
+                                       </li>
+                                       <li class="listitem">
+                                          <p>New feature: Support for reading TIFF files (multi-page TIFF as well) has been added.</p>
+                                       </li>
+                                       <li class="listitem">
+                                          <p>Improved Feature: NDReadSDK_QT - QT advanced sample application to display binaries and all available metadata is now supported
+                                             also for 64bit.
+                                          </p>
+                                       </li>
+                                       <li class="listitem">
+                                          <p>Fixed bug: XYZ coordinates were incorrectly handled with single frame images. This has been fixed.</p>
+                                       </li>
+                                       <li class="listitem">
+                                          <p>Fixed bug: Some of the ND2 files captured by N-SIM could not be opened properly. This has been fixed.</p>
+                                       </li>
+                                    </ul>
+                                 </div>
+                                                
+                                                
+                              </td>
+                           </tr>
+                           <tr>
+                              <td align="left">Revision 6.00</td>
+                              <td align="left">16. 10. 2012</td>
+                           </tr>
+                           <tr>
+                              <td align="left" colspan="2">
+                                                   
+                                                   
+                                 <div class="itemizedlist">
+                                    <ul class="itemizedlist" type="disc">
+                                       <li class="listitem">
+                                          <p>New feature: NDReadSDK_QT - QT advanced sample application to display binaries and all available metadata (32bit support only).</p>
+                                       </li>
+                                       <li class="listitem">
+                                          <p>New feature: new function Lim_FileGetImageRectData - reads the current image and stores its image data to the prepared memory
+                                             buffer. It enables to resize the image to fit the specified rectangle. The rectangle position (uiDstX, uiDstY) and size (uiDstW,
+                                             uiDstH) specifies placement of the resized image data within the destination image (which has the size of uiDstTotalW, uiDstTotalH).
+                                             The Destination buffer must have the size of uiDstLineSize x uiDstTotalH.
+                                          </p>
+                                       </li>
+                                       <li class="listitem">
+                                          <p>Improved feature: Improved reading of ND2 documents' metadata.</p>
+                                       </li>
+                                       <li class="listitem">
+                                          <p>Fixed bug: The last Event of the ND experiment was not shown.</p>
+                                       </li>
+                                       <li class="listitem">
+                                          <p>Fixed bug: Older ND2 documents by a version 3.10 were not correctly displayed.</p>
+                                       </li>
+                                    </ul>
+                                 </div>
+                                                
+                                                
+                              </td>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div><a class="indexterm" name="d0e124"></a><div class="variablelist" title="With ND2 SDK You Can:">
+               <p class="title"><b>With ND2 SDK You Can:</b></p><a class="indexterm" name="d0e130"></a><dl>
+                  <div class="varlistentry"><span class="term"><a name="d0e172"></a>Open ND2 files for reading</span><p>
+                        
+                     </p>
+                     <div class="itemizedlist">
+                        <ul class="itemizedlist" type="disc">
+                           <li class="listitem">
+                              <p>Read meta-information</p>
+                           </li>
+                           <li class="listitem">
+                              <p>Read Color Image data</p>
+                           </li>
+                           <li class="listitem">
+                              <p>Read Binary layer data</p>
+                           </li>
+                        </ul>
+                     </div>
+                     <p>
+                        
+                     </p>
+                  </div>
+                  <div class="varlistentry"><span class="term"><a name="d0e203"></a>Read all ND2 dimensions and their combinations:</span><p>
+                        
+                     </p>
+                     <div class="variablelist">
+                        <dl>
+                           <div class="varlistentry"><span class="term"><a name="d0e213"></a>Time-lapse - T</span><p>A sequence of images can be captured over a period of time and create a time-lapse image.</p>
+                           </div>
+                           <div class="varlistentry"><span class="term"><a name="d0e225"></a>Multi-point - XY</span><p>Images from different areas of the slide can be acquired.</p>
+                           </div>
+                           <div class="varlistentry"><span class="term"><a name="d0e237"></a>Z-series - Z</span><p>Several techniques utilize Z-stacks of images. Such Z-stack can be for example converted to a 3D model of the specimen.</p>
+                           </div>
+                           <div class="varlistentry"><span class="term"><a name="d0e249"></a>Multi-channel - &#955;</span><p>Fluorescence signals can be captured selectively using excitation an emission filters, each of them creating a different color
+                                 channel.
+                              </p>
+                           </div>
+                           <div class="varlistentry"><span class="term"><a name="d0e261"></a>Large image - M</span><p>When the area of interest exceeds the camera field of view, you can capture a large image composed of multiple image frames
+                                 and let it be stitched by an automatic algorithm.
+                              </p>
+                           </div>
+                        </dl>
+                     </div>
+                     <p>
+                        
+                     </p>
+                  </div>
+                  <div class="varlistentry"><span class="term"><a name="d0e276"></a>Read Components, Channels, Picture planes of:</span><p>
+                        
+                     </p>
+                     <div class="itemizedlist">
+                        <ul class="itemizedlist" type="disc">
+                           <li class="listitem">
+                              <p>Monochromatic image</p>
+                           </li>
+                           <li class="listitem">
+                              <p>Multichannel image</p>
+                           </li>
+                           <li class="listitem">
+                              <p>Multichannel image containing <span class="quote">&#8220;<span class="quote">Brightfield</span>&#8221;</span>
+                                 
+                              </p>
+                           </li>
+                           <li class="listitem">
+                              <p>RGB image</p>
+                           </li>
+                           <li class="listitem">
+                              <p>Spectral image</p>
+                           </li>
+                        </ul>
+                     </div>
+                     <p>
+                        
+                     </p>
+                  </div>
+               </dl>
+            </div>
+         </div>
+         <div class="chapter" title="&nbsp;2.&nbsp;Frame Indexing">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title"><a name="indexing"></a>&nbsp;2.&nbsp;Frame Indexing
+                     </h2>
+                  </div>
+               </div>
+            </div><a class="indexterm" name="d0e217"></a><p>Two terms are used within this manual which both describe position of a single image frame within the ND2 file structure.
+               These terms are <span class="guilabel" translate="no">Coordinates</span> and <span class="guilabel" translate="no">Sequence Index</span> of a frame. See the following picture describing their relation.
+            </p>
+            <div class="figure"><a name="d0e228"></a><p class="title"><b>Figure&nbsp;2.1.&nbsp;Example of a T[3] Z[3] ND2 file</b></p>
+               <div class="figure-contents"><a class="indexterm" name="d0e231"></a><div class="mediaobject"><img src="img/sdk_nd2_indexing.png" alt="Example of a T[3] Z[3] ND2 file"></div>
+               </div>
+            </div>
+            <p><br class="figure-break">
+               
+            </p>
+            <p>
+               <span class="guilabel" translate="no">Coordinates</span> are indexes of a frame within each dimension (loop). For example: Frame with coordinates T = 1 and Z = 0 has <span class="guilabel" translate="no">Sequence index</span> = 3. It is obvious from the example that order of dimensions is important. If, theoretically, the Z and T dimensions were
+               switched, the frame with the same coordinates (T = 1 and Z = 0) would <span class="guilabel" translate="no">Sequence index</span> = 1.
+            </p>
+         </div>
+         <div class="chapter" title="&nbsp;3.&nbsp;ND2 Experiment">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title"><a name="nd2.experiment"></a>&nbsp;3.&nbsp;ND2 Experiment
+                     </h2>
+                  </div>
+               </div>
+            </div><a class="indexterm" name="d0e252"></a><div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+               <h3 class="title">Note</h3>
+               <p>Each acquisition type gives a name to the corresponding dimension of the resulting ND2 file. For example, we can speak about
+                  two-dimensional TZ ND2 file, which means the file contains the Time-lapse dimension and the Z-series dimension.
+               </p>
+            </div>
+            <p>ND2 experiments have orthogonal structure (every available frame position must be filled with the same image type).</p>
+            <div class="figure"><a name="d0e260"></a><p class="title"><b>Figure&nbsp;3.1.&nbsp;Orthogonal experiment</b></p>
+               <div class="figure-contents"><a class="indexterm" name="d0e263"></a><div class="mediaobject"><img src="img/sdk_nd2_orthogonal.png" alt="Orthogonal experiment"></div>
+               </div>
+            </div>
+            <p><br class="figure-break">
+               
+            </p>
+            <div class="figure"><a name="d0e270"></a><p class="title"><b>Figure&nbsp;3.2.&nbsp;Non-orthogonal experiment is not supported</b></p>
+               <div class="figure-contents"><a class="indexterm" name="d0e273"></a><div class="mediaobject"><img src="img/sdk_nd2_orthogonalx.png" alt="Non-orthogonal experiment is not supported"></div>
+               </div>
+            </div>
+            <p><br class="figure-break">
+               
+            </p>
+         </div>
+         <div class="chapter" title="&nbsp;4.&nbsp;Component, Channel, Picture plane">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title"><a name="picture.planes"></a>&nbsp;4.&nbsp;Component, Channel, Picture plane
+                     </h2>
+                  </div>
+               </div>
+            </div><a class="indexterm" name="d0e283"></a><div class="variablelist">
+               <p>Color images consist of <span class="quote">&#8220;<span class="quote">physical components</span>&#8221;</span> (e.g.: red, green, blue), but the physical components can be grouped to <span class="quote">&#8220;<span class="quote">planes</span>&#8221;</span> or <span class="quote">&#8220;<span class="quote">logical planes</span>&#8221;</span>. The following list clarifies the related terminology:
+               </p>
+               <dl>
+                  <div class="varlistentry"><span class="term"><a name="d0e422"></a>Component</span><p>A physical component is an elementary unit of every image. A single-component image = monochromatic image. An RGB image and
+                        also a brightfield channel (!) each consists of 3 components.
+                     </p>
+                  </div>
+                  <div class="varlistentry"><span class="term"><a name="d0e434"></a>Channel</span><p>Every image consists of one or more channels. The difference between a channel and a component is that the one channel can
+                        contain one or three components. Three-component channels are called <span class="quote">&#8220;<span class="quote">Brightfield</span>&#8221;</span> channels.
+                     </p>
+                  </div>
+                  <div class="varlistentry"><span class="term"><a name="d0e449"></a>Brightfield channel</span><p>Brightfield channels can only exist as a part of a multichannel image. The brightfield channel consists of 3 components (within
+                        one picture plane).
+                     </p>
+                     <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <h3 class="title">Note</h3>
+                        <p>A standalone brightfield channel would be equal to an RGB image. However, this option is not allowed because there is no sense
+                           in it.
+                        </p>
+                     </div>
+                     <p>
+                        
+                     </p>
+                  </div>
+                  <div class="varlistentry"><span class="term"><a name="d0e466"></a>Picture plane</span><p>A logical entity which can be best described by the common meaning of the word <span class="quote">&#8220;<span class="quote">picture</span>&#8221;</span>. Color RGB image, brightfield channel, monochromatic image - all these terms can also be called a picture plane.
+                     </p>
+                  </div>
+                  <div class="varlistentry"><span class="term"><a name="d0e481"></a>Multichannel image</span><p>A multichannel image can contain 2 or more brightfield and/or monochromatic channels. Consequentially, it can contain 2 or
+                        more <span class="guilabel" translate="no">picture planes</span>.
+                     </p>
+                  </div>
+                  <div class="varlistentry"><span class="term"><a name="d0e496"></a>Monochromatic image</span><p>A <span class="quote">&#8220;<span class="quote">mono</span>&#8221;</span> image is a special case of the <span class="guilabel" translate="no">multichannel image</span> which contains just a single monochromatic channel (a single component).
+                     </p>
+                  </div>
+                  <div class="varlistentry"><span class="term"><a name="d0e514"></a>RGB Image</span><p>Could be described best as a <span class="quote">&#8220;<span class="quote">common color image</span>&#8221;</span>. RGB Image consists of 3 channels, each channel containing just a single component. The whole RGB image is a single <span class="guilabel" translate="no">picture plane</span>.
+                     </p>
+                  </div>
+               </dl>
+            </div>
+            <div class="figure"><a name="d0e365"></a><p class="title"><b>Figure&nbsp;4.1.&nbsp;Different image types represented by <span><a name="appl.name.short"></a>NIS-Elements</span>
+                              </b></p>
+               <div class="figure-contents"><a class="indexterm" name="d0e371"></a><div class="mediaobject"><img src="img/sdk_nd2_picture_types.png" alt="Different image types represented by NIS-Elements"></div>
+               </div>
+            </div><br class="figure-break"><div class="orderedlist">
+               <ol class="orderedlist" type="1">
+                  <li class="listitem">
+                     <p>Monochromatic image - 1 component, 1 channel, 1 picture plane</p>
+                  </li>
+                  <li class="listitem">
+                     <p>Multichannel image containing <span class="guilabel" translate="no">Brightfield</span> - 5 components, 3 channels, 3 picture planes
+                     </p>
+                  </li>
+                  <li class="listitem">
+                     <p>Multichannel image - 3 components, 3 channels, 3 picture planes</p>
+                  </li>
+                  <li class="listitem">
+                     <p>RGB image - 3 components, 3 channels, 1 picture plane</p>
+                  </li>
+               </ol>
+            </div>
+         </div>
+         <div class="chapter" title="&nbsp;5.&nbsp;About ND2 Files">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title"><a name="custom.data"></a>&nbsp;5.&nbsp;About ND2 Files
+                     </h2>
+                  </div>
+               </div>
+            </div><a class="indexterm" name="d0e396"></a><p>
+               
+            </p>
+            <div class="variablelist">
+               <p>Structures of the SDK holds information about the following properties of an ND2 file:</p>
+               <dl>
+                  <div class="varlistentry"><span class="term"><a name="d0e591"></a>Attributes</span><p>Description of basic ND2 file properties such as width, height, bit-depth etc. The attributes are common to all frames.</p>
+                     <p>See <a class="xref" href="#LIMATTRIBUTES" title="LIMATTRIBUTES">LIMATTRIBUTES</a>.
+                     </p>
+                  </div>
+                  <div class="varlistentry"><span class="term"><a name="d0e608"></a>Metadata</span><p>Description of the process of capturing the ND2 file. E.g.: duration, calibration, number of picture planes/components.</p>
+                     <p>See <a class="xref" href="#picture.planes" title="&nbsp;4.&nbsp;Component, Channel, Picture plane">4. <i>Component, Channel, Picture plane</i></a>, <a class="xref" href="#LIMMETADATA_DESC" title="LIMMETADATA_DESC">LIMMETADATA_DESC</a>, <a class="xref" href="#LIMLOCALMETADATA" title="LIMLOCALMETADATA">LIMLOCALMETADATA</a>.
+                     </p>
+                  </div>
+                  <div class="varlistentry"><span class="term"><a name="d0e629"></a>Experiment</span><p>Description of loop order and indexing of frames.</p>
+                     <p>See <a class="xref" href="#nd2.experiment" title="&nbsp;3.&nbsp;ND2 Experiment">3. <i>ND2 Experiment</i></a>, <a class="xref" href="#LIMEXPERIMENT" title="LIMEXPERIMENT">LIMEXPERIMENT</a>, <a class="xref" href="#LIMEXPERIMENTLEVEL" title="LIMEXPERIMENTLEVEL">LIMEXPERIMENTLEVEL</a>.
+                     </p>
+                  </div>
+                  <div class="varlistentry"><span class="term"><a name="d0e650"></a>Color Image</span><p>Description of color image data of all image frames.</p>
+                     <p>See <a class="xref" href="#picture.planes" title="&nbsp;4.&nbsp;Component, Channel, Picture plane">4. <i>Component, Channel, Picture plane</i></a>, <a class="xref" href="#LIMMETADATA_DESC" title="LIMMETADATA_DESC">LIMMETADATA_DESC</a>. All frames of the ND2 file share attributes (<a class="xref" href="#LIMATTRIBUTES" title="LIMATTRIBUTES">LIMATTRIBUTES</a>).
+                     </p>
+                  </div>
+                  <div class="varlistentry"><span class="term"><a name="d0e671"></a>Binary Layers</span><p>A binary layer is usually the result of thresholding. By thresholding, you distinguish objects of interest from background.
+                        A picture of night sky can make a nice example - shining stars may be <span class="quote">&#8220;<span class="quote">thresholded</span>&#8221;</span> and compose the binary layer. Then, by means of automatic measurement, you can e.g. count the stars. One image can contain
+                        multiple binary layers:
+                     </p>
+                     <div class="itemizedlist">
+                        <ul class="itemizedlist" type="disc">
+                           <li class="listitem">
+                              <p>None, one, or more binary layers can be placed over one image frame.</p>
+                           </li>
+                           <li class="listitem">
+                              <p>Each binary layer can be bound (attached) to a <span class="guilabel" translate="no">Channel</span>. Such a connection provides the following advantages within <span><a name="appl.name"></a>NIS-Elements</span>:
+                              </p>
+                              <div class="itemizedlist">
+                                 <ul class="itemizedlist" type="circle">
+                                    <li class="listitem">
+                                       <p>When selecting channels for display, only binary layers attached to the selected channels are displayed.</p>
+                                    </li>
+                                    <li class="listitem">
+                                       <p>When performing a <span class="quote">&#8220;<span class="quote">per channel</span>&#8221;</span> threshold, the resulting binary layer is automatically attached to the selected channel. Complementary color to the color
+                                          of the selected channel is used for the binary layer by default.
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <p>
+                                 
+                              </p>
+                              <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                                 <h3 class="title">Note</h3>
+                                 <p>Using the ND2 SDK, fill the <span class="emphasis"><em>wszCompName</em></span> within <a class="xref" href="#LIMBINARYDESCRIPTOR" title="LIMBINARYDESCRIPTOR">LIMBINARYDESCRIPTOR</a> in order to attach the binary layer to the <span class="emphasis"><em>wszCompName</em></span> channel.
+                                 </p>
+                              </div>
+                              <p>
+                                 
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                     <p>
+                        
+                     </p>
+                     <p>See <a class="xref" href="#LIMBINARIES" title="LIMBINARIES">LIMBINARIES</a>, <a class="xref" href="#LIMBINARYDESCRIPTOR" title="LIMBINARYDESCRIPTOR">LIMBINARYDESCRIPTOR</a>.
+                     </p>
+                     <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <h3 class="title">Note</h3>
+                        <p>Internally, a binary layer is composed of objects numbered with unique IDs. Operations over the IDs are not supported by this
+                           SDK version.
+                        </p>
+                     </div>
+                  </div>
+                  <div class="varlistentry"><span class="term"><a name="d0e749"></a>Custom Data</span><p>An ND2 file can contain custom meta-data. Custom meta-data may contain remarks for example whether the image was processed
+                        already, revision number... etc.
+                     </p>
+                     <p>See <a class="xref" href="#LIMCUSTOMDATA" title="LIMCUSTOMDATA">LIMCUSTOMDATA</a>, <a class="xref" href="#LIMCUSTOMDATASET" title="LIMCUSTOMDATASET">LIMCUSTOMDATASET</a>.
+                     </p>
+                  </div>
+               </dl>
+            </div>
+            <p>
+               
+            </p>
+         </div>
+         <div class="chapter" title="&nbsp;6.&nbsp;Constants">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title"><a name="constants"></a>&nbsp;6.&nbsp;Constants
+                     </h2>
+                  </div>
+               </div>
+            </div><a class="indexterm" name="d0e527"></a><p>
+               
+            </p><pre class="programlisting">#define LIM_OK                    0
+#define LIM_ERR_UNEXPECTED       -1
+#define LIM_ERR_NOTIMPL          -2
+#define LIM_ERR_OUTOFMEMORY      -3
+#define LIM_ERR_INVALIDARG       -4
+#define LIM_ERR_NOINTERFACE      -5
+#define LIM_ERR_POINTER          -6
+#define LIM_ERR_HANDLE           -7
+#define LIM_ERR_ABORT            -8
+#define LIM_ERR_FAIL             -9
+#define LIM_ERR_ACCESSDENIED     -10
+#define LIM_ERR_OS_FAIL          -11
+#define LIM_ERR_NOTINITIALIZED   -12
+#define LIM_ERR_NOTFOUND         -13
+#define LIM_ERR_IMPL_FAILED      -14
+#define LIM_ERR_DLG_CANCELED     -15
+#define LIM_ERR_DB_PROC_FAILED   -16
+#define LIM_ERR_OUTOFRANGE       -17
+#define LIM_ERR_PRIVILEGES       -18
+#define LIM_ERR_VERSION          -19
+
+#define LIMMAXBINARIES         128
+#define LIMMAXPICTUREPLANES    256
+#define LIMMAXEXPERIMENTLEVEL    8
+#define LIMMAXKEYLENGTH         32 
+#define LIMMAXCUSTOMTAGS        32
+
+#define LIMLOOP_TIME             0
+#define LIMLOOP_MULTIPOINT       1
+#define LIMLOOP_Z                2
+#define LIMLOOP_OTHER            3
+
+</pre><p>
+               
+            </p>
+         </div>
+         <div class="chapter" title="&nbsp;7.&nbsp;Structures">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title"><a name="d0e535"></a>&nbsp;7.&nbsp;Structures
+                     </h2>
+                  </div>
+               </div>
+            </div><a class="indexterm" name="d0e538"></a><p>The following structures are defined within the SDK:</p>
+            <p title="LIMRESULT"><a name="LIMRESULT"></a><b>LIMRESULT&nbsp;</b><br><a class="indexterm" name="d0e546"></a>
+               
+            </p><pre class="programlisting">typedef int LIMRESULT;</pre><p title="LIMRESULT">
+               
+            </p>
+            <div class="segmentedlist">
+               <table border="0">
+                  <thead>
+                     <tr class="segtitle">
+                        <th>Value</th>
+                        <th>Meaning</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr class="seglistitem">
+                        <td class="seg">0</td>
+                        <td class="seg">Reading of ND2 file has been successful</td>
+                     </tr>
+                     <tr class="seglistitem">
+                        <td class="seg">&lt;&gt;0</td>
+                        <td class="seg">Reading of ND2 file failed</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <p title="LIMRESULT">
+               
+            </p>
+            <p title="LIMFILEAPI"><a name="LIMFILEAPI"></a><b>LIMFILEAPI&nbsp;</b><br><a class="indexterm" name="d0e573"></a>
+               
+            </p><pre class="programlisting">#define LIMFILEAPI EXTERN DLLIMPORT</pre><p title="LIMFILEAPI">
+               
+            </p>
+            <p title="LIMSIZE"><a name="LIMSIZE"></a><b>LIMSIZE&nbsp;</b><br><a class="indexterm" name="d0e584"></a>
+               
+            </p><pre class="programlisting">typedef size_t LIMSIZE;</pre><p title="LIMSIZE">
+               
+            </p>
+            <p title="LIMUINT"><a name="LIMUINT"></a><b>LIMUINT&nbsp;</b><br><a class="indexterm" name="d0e595"></a>
+               
+            </p><pre class="programlisting">typedef unsigned int LIMUINT;</pre><p title="LIMUINT">
+               
+            </p>
+            <p title="LIMPICTURE"><a name="LIMPICTURE"></a><b>LIMPICTURE&nbsp;</b><br><a class="indexterm" name="d0e606"></a>
+               
+            </p><pre class="programlisting">typedef struct _LIMPICTURE          // holds image in memory
+{
+   LIMUINT     uiWidth;           //width of the image in px. 
+   LIMUINT     uiHeight;          //height of the image in px 
+   LIMUINT     uiBitsPerComp;     //Number of bits per component (8, 10, 12, 14, 16). 
+                                  //For binary images, use 32 bits. 
+   LIMUINT     uiComponents;      //Number of components in every pixel (any number up to 160 1:mono, 3:RGB)  
+   LIMUINT     uiWidthBytes;      //Aligned to 4-byte (like windows BITMAP)  
+   LIMSIZE     uiSize;            //Size of the image in memory (= uiWidthBytes * uiHeight).  
+   void*       pImageData;        //Pointer to image data.  
+} LIMPICTURE;</pre><p title="LIMPICTURE">
+               
+            </p>
+            <p title="LIMBINARYDESCRIPTOR"><a name="LIMBINARYDESCRIPTOR"></a><b>LIMBINARYDESCRIPTOR&nbsp;</b><br><a class="indexterm" name="d0e617"></a>
+               
+            </p><pre class="programlisting">typedef struct _LIMBINARYDESCRIPTOR // describes binary layer
+{
+   LIMWCHAR wszName[256];           // name of binary layer
+   LIMWCHAR wszCompName[256];       // name of component to which it is bound (or empty string)
+   LIMUINT uiColorRGB;              // color of the layer
+} LIMBINARYDESCRIPTOR;</pre><p title="LIMBINARYDESCRIPTOR">If <span class="emphasis"><em>wszCompName</em></span> is empty, it means that the binary layer is not bound (attached) to a component.
+            </p>
+            <p title="LIMBINARIES"><a name="LIMBINARIES"></a><b>LIMBINARIES&nbsp;</b><br><a class="indexterm" name="d0e631"></a>
+               
+            </p><pre class="programlisting">typedef struct _LIMBINARIES         // collection of binary layer descriptions
+{
+   LIMUINT     uiCount;                                   //Number of binary layers
+   LIMBINARYDESCRIPTOR pDescriptors[LIMMAXBINARIES];      //describes a binary layer: 
+                                                          //name, associated component, color 
+                                                          //See <a class="xref" href="#LIMBINARYDESCRIPTOR" title="LIMBINARYDESCRIPTOR">LIMBINARYDESCRIPTOR</a>.
+} LIMBINARIES;</pre><p title="LIMBINARIES">
+               
+            </p>
+            <p title="LIMDYEWL"><a name="LIMDYEWL"></a><b>LIMDYEWL&nbsp;</b><br><a class="indexterm" name="d0e644"></a>
+               
+            </p><pre class="programlisting">typedef struct _LIMDYEWL            // dye description
+{
+   double      dPeakWL;
+   double      dFwhmLoWL;
+   double      dFwhmHiWL;
+} LIMDYEWL;</pre><p title="LIMDYEWL">
+               
+            </p>
+            <p title="LIMFILTERWL"><a name="LIMFILTERWL"></a><b>LIMFILTERWL&nbsp;</b><br><a class="indexterm" name="d0e655"></a>
+               
+            </p><pre class="programlisting">typedef struct _LIMFILTERWL         // filter description
+{
+   double      dLoWL;
+   double      dHiWL;
+} LIMFILTERWL;</pre><p title="LIMFILTERWL">
+               
+            </p>
+            <p title="LIMPICTUREPLANE_DESC"><a name="LIMPICTUREPLANE_DESC"></a><b>LIMPICTUREPLANE_DESC&nbsp;</b><br><a class="indexterm" name="d0e666"></a>
+               
+            </p><pre class="programlisting">typedef struct _LIMPICTUREPLANE_DESC   // channel description (brightfield, mono)
+{
+   LIMUINT     uiCompCount;         // Number of physical components
+   LIMUINT     uiColorRGB;          // RGB color for display 0xBBGGRR
+   LIMWCHAR    wszName[256];        // Display name
+   LIMWCHAR    wszOCName[256];      // Name of the Optical Configuration
+   double      dEmissionWL;
+} LIMPICTUREPLANE_DESC;</pre><p title="LIMPICTUREPLANE_DESC">
+               
+            </p>
+            <p title="LIMMETADATA_DESC"><a name="LIMMETADATA_DESC"></a><b>LIMMETADATA_DESC&nbsp;</b><br><a class="indexterm" name="d0e677"></a>
+               
+            </p><pre class="programlisting">typedef struct _LIMMETADATA_DESC
+{
+   double      dTimeStart;          // Absolute Time in JDN
+   double      dAngle;              // Camera Angle
+   double      dCalibration;        // um/px (0.0 = uncalibrated)
+   double      dAspect;             // pixel aspect (always 1.0)
+   LIMWCHAR    wszObjectiveName[256];
+   double      dObjectiveMag;       // Optional additional information
+   double      dObjectiveNA;        // dCalibration takes into accont all these
+   double      dRefractIndex1;
+   double      dRefractIndex2;
+   double      dPinholeRadius;
+   double      dZoom;
+   double      dProjectiveMag;
+   LIMUINT     uiImageType;         // 0 (normal), 1 (spectral)
+   LIMUINT     uiPlaneCount;        // Number of logical planes (uiPlaneCount &lt;= uiComponentCount)
+   LIMUINT     uiComponentCount;    // Number of physical components (same as uiComp in <a class="xref" href="#LIMATTRIBUTES" title="LIMATTRIBUTES">LIMATTRIBUTES</a>)
+   LIMPICTUREPLANE_DESC pPlanes[LIMMAXPICTUREPLANES];
+} LIMMETADATA_DESC;</pre><p title="LIMMETADATA_DESC">
+               
+            </p>
+            <p title="LIMTEXTINFO"><a name="LIMTEXTINFO"></a><b>LIMTEXTINFO&nbsp;</b><br><a class="indexterm" name="d0e690"></a>
+               
+            </p><pre class="programlisting">{
+   LIMWCHAR wszImageID[256];
+   LIMWCHAR wszType[256];
+   LIMWCHAR wszGroup[256];
+   LIMWCHAR wszSampleID[256];
+   LIMWCHAR wszAuthor[256];
+   LIMWCHAR wszDescription[4096];
+   LIMWCHAR wszCapturing[4096];
+   LIMWCHAR wszSampling[256];
+   LIMWCHAR wszLocation[256];
+   LIMWCHAR wszDate[256];
+   LIMWCHAR wszConclusion[256];
+   LIMWCHAR wszInfo1[256];
+   LIMWCHAR wszInfo2[256];
+   LIMWCHAR wszOptics[256];
+
+} LIMTEXTINFO;</pre><p title="LIMTEXTINFO">
+               
+            </p>
+            <p title="LIMEXPERIMENTLEVEL"><a name="LIMEXPERIMENTLEVEL"></a><b>LIMEXPERIMENTLEVEL&nbsp;</b><br><a class="indexterm" name="d0e701"></a>
+               
+            </p><pre class="programlisting">typedef struct _LIMEXPERIMENTLEVEL
+{
+   LIMUINT uiExpType;            // Dimension type LIMLOOP_*, see <a class="xref" href="#constants" title="&nbsp;6.&nbsp;Constants">6. <i>Constants</i></a>
+   LIMUINT  uiLoopSize;          // Number of images in the loop
+   double   dInterval;           // ms (for Time), um (for ZStack), -1.0 (for Multipoint - nedefinovan&eacute;)
+} LIMEXPERIMENTLEVEL;</pre><p title="LIMEXPERIMENTLEVEL">
+               
+            </p>
+            <p title="LIMEXPERIMENT"><a name="LIMEXPERIMENT"></a><b>LIMEXPERIMENT&nbsp;</b><br><a class="indexterm" name="d0e714"></a>
+               
+            </p><pre class="programlisting">typedef struct _LIMEXPERIMENT
+{
+   LIMUINT  uiLevelCount;        // Number of dimensions excl. Lambda
+   LIMEXPERIMENTLEVEL pAllocatedLevels[LIMMAXEXPERIMENTLEVEL];  
+                                 //An array containing information 
+                                 //about number of frames within each dimension. 
+} LIMEXPERIMENT;</pre><p title="LIMEXPERIMENT">If an ND2 file had the following structure: T[3] Z[3] lambda[2], <span class="guilabel" translate="no">uiLevelCount</span> would equal <span class="quote">&#8220;<span class="quote">2</span>&#8221;</span>
+               
+            </p>
+            <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+               <h3 class="title">Note</h3>
+               <p>The structure of ND2 file is orthogonal, i.e. each time loop of a T[3] Z[3] lambda[2] file contains 3 Z-loops. See <a class="xref" href="#nd2.experiment" title="&nbsp;3.&nbsp;ND2 Experiment">3. <i>ND2 Experiment</i></a>.
+               </p>
+            </div>
+            <p title="LIMEXPERIMENT">
+               
+            </p>
+            <p title="LIMLOCALMETADATA"><a name="LIMLOCALMETADATA"></a><b>LIMLOCALMETADATA&nbsp;</b><br><a class="indexterm" name="d0e737"></a>
+               
+            </p><pre class="programlisting">typedef struct _LIMLOCALMETADATA
+{
+   double   dTimeMSec;           // Relative time [msec] from the first frame
+   double   dXPos;               // Stage XPos
+   double   dYPos;               // Stage YPos
+   double   dZPos;               // Stage ZPos
+
+} LIMLOCALMETADATA;</pre><p title="LIMLOCALMETADATA">
+               
+            </p>
+            <p title="LIMFILEHANDLE"><a name="LIMFILEHANDLE"></a><b>LIMFILEHANDLE&nbsp;</b><br><a class="indexterm" name="d0e748"></a>
+               
+            </p><pre class="programlisting">typedef int LIMFILEHANDLE;</pre><p title="LIMFILEHANDLE">Reference to the current ND2 file</p>
+            <div class="segmentedlist">
+               <table border="0">
+                  <thead>
+                     <tr class="segtitle">
+                        <th>Value</th>
+                        <th>Meaning</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr class="seglistitem">
+                        <td class="seg">0</td>
+                        <td class="seg">Reading of ND2 file failed</td>
+                     </tr>
+                     <tr class="seglistitem">
+                        <td class="seg">&lt;&gt;0</td>
+                        <td class="seg">Reading of ND2 file has been successful</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <p title="LIMFILEHANDLE">
+               
+            </p>
+            <p title="LIMATTRIBUTES"><a name="LIMATTRIBUTES"></a><b>LIMATTRIBUTES&nbsp;</b><br><a class="indexterm" name="d0e775"></a>
+               
+            </p><pre class="programlisting">typedef struct _LIMATTRIBUTES
+{
+   LIMUINT  uiWidth;             // Width of images
+   LIMUINT  uiWidthBytes;        // Line length 4-byte aligned
+   LIMUINT  uiHeight;            // Height if images
+   LIMUINT  uiComp;              // Number of components
+   LIMUINT  uiBpcInMemory;       // Bits per component 8 or 16
+   LIMUINT  uiBpcSignificant;    // Bits per component used 8 .. 16
+   LIMUINT  uiSequenceCount;     // Number of images in the sequence
+   LIMUINT  uiTileWidth;         // If an image is tiled size of the tile/strip 
+   LIMUINT  uiTileHeight;        // otherwise both zero 
+   LIMUINT  uiCompression;       // 0 (lossless), 1 (lossy), 2 (None)
+   LIMUINT  uiQuality;           // 0 (worst) - 100 (best)
+
+} LIMATTRIBUTES;</pre><p title="LIMATTRIBUTES">
+               
+            </p>
+            <p title="LIMCUSTOMDATA"><a name="LIMCUSTOMDATA"></a><b>LIMCUSTOMDATA&nbsp;</b><br><a class="indexterm" name="d0e786"></a>
+               
+            </p><pre class="programlisting">typedef struct _LIMFILECUSTOMDATA
+{
+   LIMWCHAR wszKey[LIMMAXKEYLENGTH];         //Identification name of a custom data array member.
+   void* pData;                              //Pointer to the custom data.
+   LIMUINT uiLength;                         //Length of the custom data
+} LIMCUSTOMDATA;</pre><p title="LIMCUSTOMDATA">
+               
+            </p>
+            <p title="LIMCUSTOMDATASET"><a name="LIMCUSTOMDATASET"></a><b>LIMCUSTOMDATASET&nbsp;</b><br><a class="indexterm" name="d0e797"></a>
+               
+            </p><pre class="programlisting">typedef struct _LIMFILECUSTOMDATASET
+{
+   LIMCUSTOMDATA pData[LIMMAXCUSTOMTAGS];        //<a class="xref" href="#LIMCUSTOMDATA" title="LIMCUSTOMDATA">LIMCUSTOMDATA</a>
+   LIMUINT uiCount;                              //Number of custom data array members
+} LIMCUSTOMDATASET;</pre><p title="LIMCUSTOMDATASET">
+               
+            </p>
+            <p title="LIMFILEUSEREVENT"><a name="LIMFILEUSEREVENT"></a><b>LIMFILEUSEREVENT&nbsp;</b><br><a class="indexterm" name="d0e810"></a>
+               
+            </p><pre class="programlisting">typedef struct _LIMFILEUSEREVENT
+{
+   LIMUINT    uiID;
+   double     dTime;       
+   LIMWCHAR   wsType[128]; 
+   LIMWCHAR   wsDescription[256];
+   
+} LIMFILEUSEREVENT;</pre><p title="LIMFILEUSEREVENT">
+               
+            </p>
+         </div>
+         <div class="chapter" title="&nbsp;8.&nbsp;Functions">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title"><a name="d0e818"></a>&nbsp;8.&nbsp;Functions
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="toc">
+               <p><b>Table of Contents</b></p>
+               <dl>
+                  <dt><span class="section"><a href="#Lim_DestroyPicture">8.1. Lim_DestroyPicture</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_FileClose">8.2. Lim_FileClose</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_FileGetAttributes">8.3. Lim_FileGetAttributes</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_FileGetBinary">8.4. Lim_FileGetBinary</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_FileGetBinaryDescriptors">8.5. Lim_FileGetBinaryDescriptors</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_FileGetExperiment">8.6. Lim_FileGetExperiment</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_FileGetImageData">8.7. Lim_FileGetImageData</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_FileGetImageRectData">8.8. Lim_FileGetImageRectData</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_FileGetMetadata">8.9. Lim_FileGetMetadata</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_FileGetTextinfo">8.10. Lim_FileGetTextinfo</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_FileOpenForRead">8.11. Lim_FileOpenForRead</a></span></dt>
+                  <dt><span class="section"><a href="#FR_Lim_GetAlignmentPoints">8.12. Lim_GetAlignmentPoints</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_GetCoordsFromSeqIndex">8.13. Lim_GetCoordsFromSeqIndex</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_GetCustomDataCount">8.14. Lim_GetCustomDataCount</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_GetCustomDataDouble">8.15. Lim_GetCustomDataDouble</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_GetCustomDataInfo">8.16. Lim_GetCustomDataInfo</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_GetCustomDataString">8.17. Lim_GetCustomDataString</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_GetLargeImageDimensions">8.18. Lim_GetLargeImageDimensions</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_GetMultipointName">8.19. Lim_GetMultipointName</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_GetNextUserEvent">8.20. Lim_GetNextUserEvent</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_GetRecordedDataDouble">8.21. Lim_GetRecordedDataDouble</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_GetRecordedDataInt">8.22. Lim_GetRecordedDataInt</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_GetRecordedDataString">8.23. Lim_GetRecordedDataString</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_GetSeqIndexFromCoords">8.24. Lim_GetSeqIndexFromCoords</a></span></dt>
+                  <dt><span class="section"><a href="#FR_Lim_GetStageCoordinates">8.25. Lim_GetStageCoordinates</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_GetZStackHome">8.26. Lim_GetZStackHome</a></span></dt>
+                  <dt><span class="section"><a href="#Lim_InitPicture">8.27. Lim_InitPicture</a></span></dt>
+                  <dt><span class="section"><a href="#FR_Lim_SetStageAlignment">8.28. Lim_SetStageAlignment</a></span></dt>
+               </dl>
+            </div><a class="indexterm" name="d0e821"></a><div class="section" title="8.1.&nbsp;Lim_DestroyPicture">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_DestroyPicture"></a>8.1.&nbsp;Lim_DestroyPicture
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e827"></a><pre class="programlisting">LIMFILEAPI void Lim_DestroyPicture(
+   LIMPICTURE* pPicture);           //<a class="xref" href="#LIMPICTURE" title="LIMPICTURE">LIMPICTURE</a>
+         </pre><p>This function deallocates memory of used to store information about the current image. Use this function when finished working
+                  with the current ND2 file.
+               </p>
+            </div>
+            <div class="section" title="8.2.&nbsp;Lim_FileClose">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_FileClose"></a>8.2.&nbsp;Lim_FileClose
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e839"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_FileClose(
+   LIMFILEHANDLE hFile);           //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+         </pre><p>Use this function to close the current ND2 file when finished.</p>
+            </div>
+            <div class="section" title="8.3.&nbsp;Lim_FileGetAttributes">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_FileGetAttributes"></a>8.3.&nbsp;Lim_FileGetAttributes
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e853"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_FileGetAttributes(
+   LIMFILEHANDLE hFile, 
+   LIMATTRIBUTES* pFileAttributes
+);</pre><p>This function returns an array of attributes of the ND2 file. See <a class="xref" href="#LIMATTRIBUTES" title="LIMATTRIBUTES">LIMATTRIBUTES</a>.
+               </p>
+            </div>
+            <div class="section" title="8.4.&nbsp;Lim_FileGetBinary">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_FileGetBinary"></a>8.4.&nbsp;Lim_FileGetBinary
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e867"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_FileGetBinary(
+   LIMFILEHANDLE hFile,            //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+   LIMUINT uiSequenceIndex,        //Sequence index of the frame. See <a class="xref" href="#indexing" title="&nbsp;2.&nbsp;Frame Indexing">2. <i>Frame Indexing</i></a>.
+   LIMUINT uiBinaryIndex,          //Index of the binary layer. See <a class="xref" href="#LIMBINARIES" title="LIMBINARIES">LIMBINARIES</a>
+   LIMPICTURE* pPicture);          // <a class="xref" href="#LIMPICTURE" title="LIMPICTURE">LIMPICTURE</a>
+         </pre><p>This function reads the contents of the binary layer. The <a class="xref" href="#Lim_InitPicture" title="8.27.&nbsp;Lim_InitPicture">8.27. Lim_InitPicture</a> function must be called beforehand to fill the <a class="xref" href="#LIMPICTURE" title="LIMPICTURE">LIMPICTURE</a> structure.
+               </p>
+            </div>
+            <div class="section" title="8.5.&nbsp;Lim_FileGetBinaryDescriptors">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_FileGetBinaryDescriptors"></a>8.5.&nbsp;Lim_FileGetBinaryDescriptors
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e891"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_FileGetBinaryDescriptors(
+   LIMFILEHANDLE hFile,           //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+   LIMBINARIES* pBinaries);       //number, names, colors and associations of binary layers - <a class="xref" href="#LIMBINARIES" title="LIMBINARIES">LIMBINARIES</a>
+         </pre><p>This function reads information about binary layers contained within the ND2 file.</p>
+            </div>
+            <div class="section" title="8.6.&nbsp;Lim_FileGetExperiment">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_FileGetExperiment"></a>8.6.&nbsp;Lim_FileGetExperiment
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e907"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_FileGetExperiment(
+   LIMFILEHANDLE hFile,                 //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+   LIMEXPERIMENT* pFileExperiment);     //number and order of loops - <a class="xref" href="#LIMEXPERIMENT" title="LIMEXPERIMENT">LIMEXPERIMENT</a>
+         </pre><p>This function returns structure of the ND2 file or, if you like, the original ND experiment.</p>
+            </div>
+            <div class="section" title="8.7.&nbsp;Lim_FileGetImageData">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_FileGetImageData"></a>8.7.&nbsp;Lim_FileGetImageData
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e923"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_FileGetImageData(
+   LIMFILEHANDLE hFile,           //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+   LIMUINT uiSeqIndex,            //Sequence index of the frame. See <a class="xref" href="#indexing" title="&nbsp;2.&nbsp;Frame Indexing">2. <i>Frame Indexing</i></a>.
+   LIMPICTURE* pPicture,          //<a class="xref" href="#LIMPICTURE" title="LIMPICTURE">LIMPICTURE</a>
+   LIMLOCALMETADATA* pImgInfo);   //time, X, Y and Z of the frame - <a class="xref" href="#LIMLOCALMETADATA" title="LIMLOCALMETADATA">LIMLOCALMETADATA</a>
+         </pre><p>This function reads the image data of the current picture. The <a class="xref" href="#Lim_InitPicture" title="8.27.&nbsp;Lim_InitPicture">8.27. Lim_InitPicture</a> function must be called beforehand to fill the <a class="xref" href="#LIMPICTURE" title="LIMPICTURE">LIMPICTURE</a> structure.
+               </p>
+            </div>
+            <div class="section" title="8.8.&nbsp;Lim_FileGetImageRectData">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_FileGetImageRectData"></a>8.8.&nbsp;Lim_FileGetImageRectData
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e947"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_FileGetImageRectData(
+   LIMFILEHANDLE hFile,           //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+   LIMUINT uiSeqIndex,            //Sequence index of the frame. See <a class="xref" href="#indexing" title="&nbsp;2.&nbsp;Frame Indexing">2. <i>Frame Indexing</i></a>.
+   LIMUINT uiDstTotalW,           //width of the pBuffer image
+   LIMUINT uiDstTotalH,           //height of the pBuffer image
+   LIMUINT uiDstX,                //X position in the target file
+   LIMUINT uiDstY,                //Y position in the target file
+   LIMUINT uiDstW,                //target width
+   LIMUINT uiDstH,                //target height
+   void* pBuffer,                 //Pointer to the data to be saved
+   LIMUINT uiDstLineSize,         //size of a single line of the pBuffer image in bytes
+   LIMINT iStretchMode,           //resize quality (LIMSTRETCH_QUICK, LIMSTRETCH_SPLINES, LIMSTRETCH_LINEAR) 
+   LIMLOCALMETADATA* pImgInfo);   //time, X, Y and Z of the frame - <a class="xref" href="#LIMLOCALMETADATA" title="LIMLOCALMETADATA">LIMLOCALMETADATA</a> 
+
+         </pre><p>This function reads the current image and stores its image data to the prepared memory buffer. It enables to resize the image
+                  to fit the specified rectangle. The rectangle position (uiDstX, uiDstY) and size (uiDstW, uiDstH) specifies placement of the
+                  resized image data within the destination image (which has the size of uiDstTotalW, uiDstTotalH). The Destination buffer must
+                  have the size of uiDstLineSize x uiDstTotalH.
+               </p>
+            </div>
+            <div class="section" title="8.9.&nbsp;Lim_FileGetMetadata">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_FileGetMetadata"></a>8.9.&nbsp;Lim_FileGetMetadata
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e965"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_FileGetMetadata(
+   LIMFILEHANDLE hFile,                //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+   LIMMETADATA_DESC* pFileMetadata);   //<a class="xref" href="#LIMMETADATA_DESC" title="LIMMETADATA_DESC">LIMMETADATA_DESC</a>
+         </pre><p>This function returns meta-data of the current ND2 file. Not all members of the structure are necessarily filled.</p>
+            </div>
+            <div class="section" title="8.10.&nbsp;Lim_FileGetTextinfo">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_FileGetTextinfo"></a>8.10.&nbsp;Lim_FileGetTextinfo
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e981"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_FileGetTextinfo(
+   LIMFILEHANDLE hFile,                 //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+   LIMTEXTINFO* pFileTextinfo);         //<a class="xref" href="#LIMTEXTINFO" title="LIMTEXTINFO">LIMTEXTINFO</a>
+         </pre><p>This function reads additional text info from the ND2 file.</p>
+            </div>
+            <div class="section" title="8.11.&nbsp;Lim_FileOpenForRead">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_FileOpenForRead"></a>8.11.&nbsp;Lim_FileOpenForRead
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e997"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> Lim_FileOpenForRead(
+   LIMCWSTR wszFileName);           //Absolute path to the ND2 file to be opened.</pre><p>This function reads the ND2 file. It must be used before using the other functions. When finished working with the ND2 file,
+                  <a class="xref" href="#Lim_FileClose" title="8.2.&nbsp;Lim_FileClose">8.2. Lim_FileClose</a> function shall be called.
+               </p>
+            </div>
+            <div class="section" title="8.12.&nbsp;Lim_GetAlignmentPoints">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="FR_Lim_GetAlignmentPoints"></a>8.12.&nbsp;Lim_GetAlignmentPoints
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1011"></a><pre class="programlisting">LIMRESULT Lim_GetAlignmentPoints(
+   LIMFILEHANDLE hFile, 
+   LIMUINT* puiPosCount, 
+   LIMUINT* puiSeqIdx, 
+   LIMUINT* puiXPos, 
+   LIMUINT* puiYPos, 
+   double *pdXPos, 
+   double *pdYPos);</pre><p>Retrieves an array of significant points from the image. These points can be set to the image metadata within <span><a name="appl.name.short"></a>NIS-Elements</span> by calling the <code class="function">SetAlignmentPoints</code> function. If <em class="parameter"><code>puiXPos</code></em>, <em class="parameter"><code>puiYPos</code></em>, <em class="parameter"><code>pdXPos</code></em>, <em class="parameter"><code>pdYPos</code></em> are <span class="emphasis"><em>0</em></span>, the function can be used just for retrieving the number of points (<em class="parameter"><code>uiPosCount</code></em>).
+               </p>
+               <div class="variablelist paramlist">
+                  <dl>
+                     <div class="varlistentry"><a name="limfilehandle.hfile"></a><span class="term"><a name="d0e1304"></a>
+                           <a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+                                             <em class="parameter"><code>hFile</code></em>
+                                          </span><p>Pointer to the open file</p>
+                     </div>
+                     <div class="varlistentry"><a name="limuint.uiposcount"></a><span class="term"><a name="d0e1319"></a>LIMUINT <em class="parameter"><code>uiPosCount</code></em>
+                                          </span><p>Number of XY points defined</p>
+                     </div>
+                     <div class="varlistentry"><a name="limuint.p.puiseqidx"></a><span class="term"><a name="d0e1333"></a>LIMUINT* <em class="parameter"><code>puiSeqIdx</code></em>
+                                          </span><p>
+                           <span class="emphasis"><em>Sequence Index</em></span> (array) of a frame. Size of the array = <span class="emphasis"><em>uiPosCount</em></span>. See <a class="xref" href="#indexing" title="&nbsp;2.&nbsp;Frame Indexing">2. <i>Frame Indexing</i></a>.
+                        </p>
+                     </div>
+                     <div class="varlistentry"><a name="limuint.p.puixpos"></a><span class="term"><a name="d0e1354"></a>LIMUINT* <em class="parameter"><code>puiXPos</code></em>
+                                          </span><p>An array of X coordinates in pixels. Distance from the left image border. Size of the array = <span class="emphasis"><em>uiPosCount</em></span>.
+                        </p>
+                     </div>
+                     <div class="varlistentry"><a name="limuint.p.puiypos"></a><span class="term"><a name="d0e1371"></a>LIMUINT* <em class="parameter"><code>puiYPos</code></em>
+                                          </span><p>An array of Y coordinates in pixels. Distance from the top image border. Size of the array = <span class="emphasis"><em>uiPosCount</em></span>.
+                        </p>
+                     </div>
+                     <div class="varlistentry"><a name="double.p.pdxpos"></a><span class="term"><a name="d0e1388"></a>double* <em class="parameter"><code>pdXPos</code></em>
+                                         </span><p>An array of X stage coordinates [&micro;m]. Size of the array = <span class="emphasis"><em>uiPosCount</em></span>.
+                        </p>
+                     </div>
+                     <div class="varlistentry"><a name="double.p.pdypos"></a><span class="term"><a name="d0e1405"></a>double* <em class="parameter"><code>pdYPos</code></em>
+                                         </span><p>An array of Y stage coordinates [&micro;m]. Size of the array = <span class="emphasis"><em>uiPosCount</em></span>.
+                        </p>
+                     </div>
+                  </dl>
+               </div>
+            </div>
+            <div class="section" title="8.13.&nbsp;Lim_GetCoordsFromSeqIndex">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_GetCoordsFromSeqIndex"></a>8.13.&nbsp;Lim_GetCoordsFromSeqIndex
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1131"></a><pre class="programlisting">LIMFILEAPI void Lim_GetCoordsFromSeqIndex(
+   LIMEXPERIMENT* pExperiment,           //Loop ordering - <a class="xref" href="#LIMEXPERIMENT" title="LIMEXPERIMENT">LIMEXPERIMENT</a>
+   LIMUINT uiSeqIdx,                     //Sequence index of the frame. See <a class="xref" href="#indexing" title="&nbsp;2.&nbsp;Frame Indexing">2. <i>Frame Indexing</i></a>.
+   LIMUINT* pExpCoords);                 //Experiment coordinates of the frame - see below</pre><p>This function returns coordinates of a frame within the ND experiment structure based on the sequence index. See <a class="xref" href="#indexing" title="&nbsp;2.&nbsp;Frame Indexing">2. <i>Frame Indexing</i></a>.
+               </p>
+               <div class="variablelist">
+                  <dl>
+                     <div class="varlistentry"><span class="term"><a name="d0e1441"></a>pExpCoords</span><p>
+                           
+                        </p>
+                        <div class="segmentedlist">
+                           <table border="0">
+                              <thead>
+                                 <tr class="segtitle">
+                                    <th>Value</th>
+                                    <th>Meaning</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr class="seglistitem">
+                                    <td class="seg">pExpCoords[LIMLOOP_TIME]</td>
+                                    <td class="seg">Position in time</td>
+                                 </tr>
+                                 <tr class="seglistitem">
+                                    <td class="seg">pExpCoords[LIMLOOP_MULTIPOINT]</td>
+                                    <td class="seg">Position in multipoint</td>
+                                 </tr>
+                                 <tr class="seglistitem">
+                                    <td class="seg">pExpCoords[LIMLOOP_Z]</td>
+                                    <td class="seg">Position in Z</td>
+                                 </tr>
+                                 <tr class="seglistitem">
+                                    <td class="seg">pExpCoords[LIMLOOP_OTHER]</td>
+                                    <td class="seg">Position in the custom loop</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <p>
+                           
+                        </p>
+                     </div>
+                  </dl>
+               </div>
+               <p>
+                  
+               </p>
+               <p>The function is inverse to the <a class="xref" href="#Lim_GetSeqIndexFromCoords" title="8.24.&nbsp;Lim_GetSeqIndexFromCoords">8.24. Lim_GetSeqIndexFromCoords</a> function.
+               </p>
+            </div>
+            <div class="section" title="8.14.&nbsp;Lim_GetCustomDataCount">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_GetCustomDataCount"></a>8.14.&nbsp;Lim_GetCustomDataCount
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1185"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_GetCustomDataCount(
+   LIMFILEHANDLE hFile);           //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> returned by the <a class="xref" href="#Lim_FileOpenForRead" title="8.11.&nbsp;Lim_FileOpenForRead">8.11. Lim_FileOpenForRead</a> function
+</pre><p>The function returns the number of Custom Metadata fields defined in a file specified by <span class="emphasis"><em>hFile</em></span> parameter.
+               </p>
+            </div>
+            <div class="section" title="8.15.&nbsp;Lim_GetCustomDataDouble">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_GetCustomDataDouble"></a>8.15.&nbsp;Lim_GetCustomDataDouble
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1204"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_GetCustomDataDouble(
+   LIMFILEHANDLE hFile,            //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> returned by the <a class="xref" href="#Lim_FileOpenForRead" title="8.11.&nbsp;Lim_FileOpenForRead">8.11. Lim_FileOpenForRead</a> function
+   LIMINT uiCustomDataIndex,       //  index of the Custom Metadata field
+   double* pdData);                // will be filled by a double value</pre><p>The function returns numerical representation of the Custom Metadata field value.</p>
+            </div>
+            <div class="section" title="8.16.&nbsp;Lim_GetCustomDataInfo">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_GetCustomDataInfo"></a>8.16.&nbsp;Lim_GetCustomDataInfo
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1220"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_GetCustomDataInfo(
+   LIMFILEHANDLE hFile,            //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> returned by the <a class="xref" href="#Lim_FileOpenForRead" title="8.11.&nbsp;Lim_FileOpenForRead">8.11. Lim_FileOpenForRead</a> function
+   LIMINT uiCustomDataIndex,       // index of the Custom Metadata field
+   LIMWSTR wszName,                // string buffer of 256 characters, will be filled by the field name
+   LIMWSTR wszDescription,         // string buffer of 256 characters, will be filled by the field description
+   LIMINT *piType,                 // will be filled by the field type (Label = 1, Number = 2, Text = 3, Selection  = 4, LongText  = 5, Date = 6)
+   LIMINT *piFlags);               // will be filled by the field state (*piFlags % 1 = Enabled, *piFlags % 2 = Mandatory)</pre><p>The function returns information about the Custom Data field at index <span class="emphasis"><em>uiCustomDataIndex</em></span>. Index value is from zero to the number of fields returned by the <a class="xref" href="#Lim_GetCustomDataCount" title="8.14.&nbsp;Lim_GetCustomDataCount">8.14. Lim_GetCustomDataCount</a> function.
+               </p>
+            </div>
+            <div class="section" title="8.17.&nbsp;Lim_GetCustomDataString">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_GetCustomDataString"></a>8.17.&nbsp;Lim_GetCustomDataString
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1241"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_GetCustomDataString(
+   LIMFILEHANDLE hFile,            //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> returned by the <a class="xref" href="#Lim_FileOpenForRead" title="8.11.&nbsp;Lim_FileOpenForRead">8.11. Lim_FileOpenForRead</a> function
+   LIMINT uiCustomDataIndex,       //  index of the Custom Metadata field 
+   LIMWSTR wszData,                // string buffer of *piLength characters (or 256 if piLength is NULL), will be filled by the field value
+   LIMINT *piLength);              // length of wszData on input/desired buffer length on output if not NULL</pre><p>The function returns text representation of the Custom Metadata field value. Maximal length of <span class="emphasis"><em>wszData</em></span> buffer can be specified by the <span class="emphasis"><em>piLength</em></span> parameter. The <span class="emphasis"><em>piLength</em></span> parameter will contain the desired length of the buffer on return.
+               </p>
+            </div>
+            <div class="section" title="8.18.&nbsp;Lim_GetLargeImageDimensions">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_GetLargeImageDimensions"></a>8.18.&nbsp;Lim_GetLargeImageDimensions
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1266"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_GetLargeImageDimensions(
+   LIMFILEHANDLE hFile,            //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+   LIMUINT* puiXFields,            //Size of the grid used
+   LIMUINT* puiYFields,            //Size of the grid used
+   double* pdOverlap);             //Overlap value (0.1 = 10%) </pre><p>This function retrieves information about the large-image loop.</p>
+            </div>
+            <div class="section" title="8.19.&nbsp;Lim_GetMultipointName">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_GetMultipointName"></a>8.19.&nbsp;Lim_GetMultipointName
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1280"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_GetMultipointName(
+   LIMFILEHANDLE hFile,            //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+   LIMUINT uiPointIdx,             //Index of the multi-point phase.
+   LIMWSTR wstrPointName);         //Name of the multi-point phase.</pre><p>This function retrieves user names of multi-point phases of the ND experiment. (Default values are <span class="quote">&#8220;<span class="quote">#1</span>&#8221;</span>, <span class="quote">&#8220;<span class="quote">#2</span>&#8221;</span>, etc.
+               </p>
+            </div>
+            <div class="section" title="8.20.&nbsp;Lim_GetNextUserEvent">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_GetNextUserEvent"></a>8.20.&nbsp;Lim_GetNextUserEvent
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1300"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_GetNextUserEvent(
+   LIMFILEHANDLE hFile,            //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+   LIMUINT *puiNextID, 
+   LIMFILEUSEREVENT* pEventInfo);</pre><p></p>
+            </div>
+            <div class="section" title="8.21.&nbsp;Lim_GetRecordedDataDouble">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_GetRecordedDataDouble"></a>8.21.&nbsp;Lim_GetRecordedDataDouble
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1313"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_GetRecordedDataDouble(
+   LIMFILEHANDLE hFile,            //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+   LIMCWSTR wszName,               //
+   LIMINT uiSeqIndex,              //Sequence index of the frame. See <a class="xref" href="#indexing" title="&nbsp;2.&nbsp;Frame Indexing">2. <i>Frame Indexing</i></a>.
+   double* pdData);</pre><p></p>
+            </div>
+            <div class="section" title="8.22.&nbsp;Lim_GetRecordedDataInt">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_GetRecordedDataInt"></a>8.22.&nbsp;Lim_GetRecordedDataInt
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1328"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_GetRecordedDataInt(
+   LIMFILEHANDLE hFile,            //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+   LIMCWSTR wszName,               //
+   LIMINT uiSeqIndex,              //Sequence index of the frame. See <a class="xref" href="#indexing" title="&nbsp;2.&nbsp;Frame Indexing">2. <i>Frame Indexing</i></a>.
+   LIMINT *piData);</pre><p></p>
+            </div>
+            <div class="section" title="8.23.&nbsp;Lim_GetRecordedDataString">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_GetRecordedDataString"></a>8.23.&nbsp;Lim_GetRecordedDataString
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1343"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_GetRecordedDataString(
+   LIMFILEHANDLE hFile,            //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+   LIMCWSTR wszName, 
+   LIMINT uiSeqIndex,              //Sequence index of the frame. See <a class="xref" href="#indexing" title="&nbsp;2.&nbsp;Frame Indexing">2. <i>Frame Indexing</i></a>. 
+   LIMWSTR wszData);</pre><p></p>
+            </div>
+            <div class="section" title="8.24.&nbsp;Lim_GetSeqIndexFromCoords">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_GetSeqIndexFromCoords"></a>8.24.&nbsp;Lim_GetSeqIndexFromCoords
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1358"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMUINT" title="LIMUINT">LIMUINT</a> Lim_GetSeqIndexFromCoords(
+   LIMEXPERIMENT* pExperiment,      //Loop ordering - <a class="xref" href="#LIMEXPERIMENT" title="LIMEXPERIMENT">LIMEXPERIMENT</a>
+   LIMUINT* pExpCoords);            //Experiment coordinates of the frame - see below</pre><p>This function returns sequence index of a frame based on the given coordinates within the ND experiment structure.</p>
+               <p>
+                  
+               </p>
+               <div class="variablelist">
+                  <dl>
+                     <div class="varlistentry"><span class="term"><a name="d0e1714"></a>pExpCoords</span><p>
+                           
+                        </p>
+                        <div class="segmentedlist">
+                           <table border="0">
+                              <thead>
+                                 <tr class="segtitle">
+                                    <th>Value</th>
+                                    <th>Meaning</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr class="seglistitem">
+                                    <td class="seg">pExpCoords[LIMLOOP_TIME]</td>
+                                    <td class="seg">Position in time</td>
+                                 </tr>
+                                 <tr class="seglistitem">
+                                    <td class="seg">pExpCoords[LIMLOOP_MULTIPOINT]</td>
+                                    <td class="seg">Position in multipoint</td>
+                                 </tr>
+                                 <tr class="seglistitem">
+                                    <td class="seg">pExpCoords[LIMLOOP_Z]</td>
+                                    <td class="seg">Position in Z</td>
+                                 </tr>
+                                 <tr class="seglistitem">
+                                    <td class="seg">pExpCoords[LIMLOOP_OTHER]</td>
+                                    <td class="seg">Position in the custom loop</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <p>
+                           
+                        </p>
+                     </div>
+                  </dl>
+               </div>
+               <p>
+                  
+               </p>
+               <p>The function is inverse to the <a class="xref" href="#Lim_GetCoordsFromSeqIndex" title="8.13.&nbsp;Lim_GetCoordsFromSeqIndex">8.13. Lim_GetCoordsFromSeqIndex</a> function. See <a class="xref" href="#indexing" title="&nbsp;2.&nbsp;Frame Indexing">2. <i>Frame Indexing</i></a>.
+               </p>
+            </div>
+            <div class="section" title="8.25.&nbsp;Lim_GetStageCoordinates">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="FR_Lim_GetStageCoordinates"></a>8.25.&nbsp;Lim_GetStageCoordinates
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1414"></a><pre class="programlisting">
+            <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_GetStageCoordinates(
+   LIMFILEHANDLE hFile,
+   LIMUINT uiPosCount, 
+   LIMUINT* puiSeqIdx, 
+   LIMUINT* puiXPos, 
+   LIMUINT* puiYPos, 
+   double* pdXPos, 
+   double *pdYPos, 
+   double *pdZPos, 
+   LIMINT iUseAlignment);
+</pre><p>Returns an array of stage coordinates of the specified image pixels. Stage coordinates are computed either from stage settings
+                  stored to the file during acquisition or from the result of the <a class="xref" href="#FR_Lim_SetStageAlignment" title="8.28.&nbsp;Lim_SetStageAlignment">8.28. Lim_SetStageAlignment</a> function.
+               </p>
+               <div class="variablelist paramlist">
+                  <dl>
+                     <div class="varlistentry"><a name="limfilehandle.hfile"></a><span class="term"><a name="d0e1790"></a>
+                           <a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+                                             <em class="parameter"><code>hFile</code></em>
+                                          </span><p>Pointer to the open file</p>
+                     </div>
+                     <div class="varlistentry"><a name="limuint.uiposcount"></a><span class="term"><a name="d0e1805"></a>LIMUINT <em class="parameter"><code>uiPosCount</code></em>
+                                          </span><p>Number of XY points defined</p>
+                     </div>
+                     <div class="varlistentry"><a name="limuint.p.puiseqidx"></a><span class="term"><a name="d0e1819"></a>LIMUINT* <em class="parameter"><code>puiSeqIdx</code></em>
+                                          </span><p>
+                           <span class="emphasis"><em>Sequence Index</em></span> (array) of a frame. Size of the array = <span class="emphasis"><em>uiPosCount</em></span>. See <a class="xref" href="#indexing" title="&nbsp;2.&nbsp;Frame Indexing">2. <i>Frame Indexing</i></a>.
+                        </p>
+                     </div>
+                     <div class="varlistentry"><a name="limuint.p.puixpos"></a><span class="term"><a name="d0e1840"></a>LIMUINT* <em class="parameter"><code>puiXPos</code></em>
+                                          </span><p>An array of X coordinates in pixels. Distance from the left image border. Size of the array = <span class="emphasis"><em>uiPosCount</em></span>.
+                        </p>
+                     </div>
+                     <div class="varlistentry"><a name="limuint.p.puiypos"></a><span class="term"><a name="d0e1857"></a>LIMUINT* <em class="parameter"><code>puiYPos</code></em>
+                                          </span><p>An array of Y coordinates in pixels. Distance from the top image border. Size of the array = <span class="emphasis"><em>uiPosCount</em></span>.
+                        </p>
+                     </div>
+                     <div class="varlistentry"><a name="double.p.pdxpos"></a><span class="term"><a name="d0e1874"></a>double* <em class="parameter"><code>pdXPos</code></em>
+                                         </span><p>An array of X stage coordinates [&micro;m]. Size of the array = <span class="emphasis"><em>uiPosCount</em></span>.
+                        </p>
+                     </div>
+                     <div class="varlistentry"><a name="double.p.pdypos"></a><span class="term"><a name="d0e1891"></a>double* <em class="parameter"><code>pdYPos</code></em>
+                                         </span><p>An array of Y stage coordinates [&micro;m]. Size of the array = <span class="emphasis"><em>uiPosCount</em></span>.
+                        </p>
+                     </div>
+                     <div class="varlistentry"><a name="double.p.pdzpos"></a><span class="term"><a name="d0e1908"></a>double* <em class="parameter"><code>pdZPos</code></em>
+                                         </span><p>An array of Z stage coordinates [&micro;m]. Size of the array = <span class="emphasis"><em>uiPosCount</em></span>.
+                        </p>
+                     </div>
+                     <div class="varlistentry"><a name="limint.iusealignment"></a><span class="term"><a name="d0e1925"></a>LIMINT <em class="parameter"><code>iUseAlignment</code></em>
+                                          </span><p>Shall the user stage alignment be used?</p>
+                        <div class="segmentedlist">
+                           <table border="0">
+                              <thead>
+                                 <tr class="segtitle">
+                                    <th>Value</th>
+                                    <th>Meaning</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr class="seglistitem">
+                                    <td class="seg">0</td>
+                                    <td class="seg">stage coordinates are loaded from the image</td>
+                                 </tr>
+                                 <tr class="seglistitem">
+                                    <td class="seg">1</td>
+                                    <td class="seg">user alignment is used (result of <code class="function">Lim_SetStageAlignment</code>)
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <p>
+                           
+                        </p>
+                     </div>
+                  </dl>
+               </div>
+            </div>
+            <div class="section" title="8.26.&nbsp;Lim_GetZStackHome">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_GetZStackHome"></a>8.26.&nbsp;Lim_GetZStackHome
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1554"></a><pre class="programlisting">LIMINT Lim_GetZStackHome(
+   LIMFILEHANDLE hFile);          //<a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a>
+
+         </pre><p>This function returns Z home position of the Z sequence, -1 if there is no Z dimension.</p>
+            </div>
+            <div class="section" title="8.27.&nbsp;Lim_InitPicture">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="Lim_InitPicture"></a>8.27.&nbsp;Lim_InitPicture
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1566"></a><pre class="programlisting">LIMFILEAPI <a class="xref" href="#LIMSIZE" title="LIMSIZE">LIMSIZE</a> Lim_InitPicture(
+   LIMPICTURE* pPicture,        //<a class="xref" href="#LIMPICTURE" title="LIMPICTURE">LIMPICTURE</a>
+   LIMUINT width,               //Image width
+   LIMUINT height,              //Image height
+   LIMUINT bpc,                 //Bits per component
+   LIMUINT components);         //Number of physical components</pre><p>This function fills the <a class="xref" href="#LIMPICTURE" title="LIMPICTURE">LIMPICTURE</a> structure. Use the <a class="xref" href="#Lim_FileGetAttributes" title="8.3.&nbsp;Lim_FileGetAttributes">8.3. Lim_FileGetAttributes</a> function to get correct values for the parameters.
+               </p>
+            </div>
+            <div class="section" title="8.28.&nbsp;Lim_SetStageAlignment">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both"><a name="FR_Lim_SetStageAlignment"></a>8.28.&nbsp;Lim_SetStageAlignment
+                        </h2>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e1584"></a><pre class="programlisting">
+            <a class="xref" href="#LIMRESULT" title="LIMRESULT">LIMRESULT</a> Lim_SetStageAlignment(
+   LIMFILEHANDLE hFile, 
+   LIMUINT uiPosCount,
+   double* pdXSrc, 
+   double* pdYSrc, 
+   double* pdXDst, 
+   double *pdYDst);</pre><p>Writes user stage settings for the current image to memory. The settings are defined by several XY point pairs - original
+                  stage coordinates (from the image) and destination (user) stage coordinates. Stage coordinates of the current image set by
+                  this function can be retrieved by the <a class="xref" href="#FR_Lim_GetStageCoordinates" title="8.25.&nbsp;Lim_GetStageCoordinates">8.25. Lim_GetStageCoordinates</a> function.
+               </p>
+               <div class="variablelist paramlist">
+                  <dl>
+                     <div class="varlistentry"><a name="limfilehandle.hfile"></a><span class="term"><a name="d0e2015"></a>
+                           <a class="xref" href="#LIMFILEHANDLE" title="LIMFILEHANDLE">LIMFILEHANDLE</a> 
+                                             <em class="parameter"><code>hFile</code></em>
+                                          </span><p>Pointer to the open file</p>
+                     </div>
+                     <div class="varlistentry"><a name="limuint.uiposcount"></a><span class="term"><a name="d0e2030"></a>LIMUINT <em class="parameter"><code>uiPosCount</code></em>
+                                          </span><p>Number of XY points defined</p>
+                     </div>
+                     <div class="varlistentry"><a name="double.p.pdxsrc"></a><span class="term"><a name="d0e2044"></a>double* <em class="parameter"><code>pdXSrc</code></em>
+                                         </span><p>An array of input X stage coordinates (acquisition stage coordinates).</p>
+                     </div>
+                     <div class="varlistentry"><a name="double.p.pdysrc"></a><span class="term"><a name="d0e2058"></a>double* <em class="parameter"><code>pdYSrc</code></em>
+                                         </span><p>An array of input Y stage coordinates (acquisition stage coordinates).</p>
+                     </div>
+                     <div class="varlistentry"><a name="double.p.pdxdst"></a><span class="term"><a name="d0e2072"></a>double* <em class="parameter"><code>pdXDst</code></em>
+                                         </span><p>An array of output X stage coordinates (of the current stage).</p>
+                     </div>
+                     <div class="varlistentry"><a name="double.p.pdydst"></a><span class="term"><a name="d0e2086"></a>double* <em class="parameter"><code>pdYDst</code></em>
+                                         </span><p>An array of output Y stage coordinates (of the current stage).</p>
+                     </div>
+                  </dl>
+               </div>
+            </div>
+         </div>
+         <div class="chapter" title="&nbsp;9.&nbsp;Using ND2SDK with Cocoa applications">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title"><a name="d0e1652"></a>&nbsp;9.&nbsp;Using ND2SDK with Cocoa applications
+                     </h2>
+                  </div>
+               </div>
+            </div><a class="indexterm" name="d0e1655"></a><p>ND2SDK uses 32-bit long characters. Therefore you need to convert NSString to wchar_t using [NSString cStringUsingEncoding:encoding]
+               function. Following sample shows how to call Lim_FileOpenForRead with image path stored in NSURL *absoluteURL variable:
+            </p>
+            <p>
+               <code class="code">NSString *path = [absoluteURL path]; </code>
+               
+            </p>
+            <p>
+               <code class="code">const wchar_t *pString = (const wchar_t *)[path cStringUsingEncoding:NSUTF32StringEncoding]; </code>
+               
+            </p>
+            <p>
+               <code class="code">LIMFILEHANDLE hFile = Lim_FileOpenForRead(pString);</code>
+               
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

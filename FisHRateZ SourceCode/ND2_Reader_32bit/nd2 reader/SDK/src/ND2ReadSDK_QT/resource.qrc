@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>nd2.tiff</file>
+    </qresource>
+</RCC>
